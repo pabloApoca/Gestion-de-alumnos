@@ -1,4 +1,4 @@
 # Gestion-de-alumnos
 Esta va a ser una Api para una escuela o universidad, en la que vamos a poder loguearnos como estudiantes, profesores y administradores. Vamos a tener validaciones, uso de DTO, autentificaciones, test unitario y de integración  y conexión a bases de datos como MySQL. Utilizando Java con Spring Boot.
 
-[Proyecto base en Spring initializr](.https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.3&packaging=jar&jvmVersion=11&groupId=com&artifactId=studentManagement&name=studentManagement&description=This%20will%20be%20an%20application%20for%20student%20management%20in%20schools%20or%20universities.&packageName=com.studentManagement&dependencies=devtools,web,data-jpa,mysql,lombok,h2)
+[Proyecto base en Spring initializr](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.3&packaging=jar&jvmVersion=11&groupId=com&artifactId=studentManagement&name=studentManagement&description=This%20will%20be%20an%20application%20for%20student%20management%20in%20schools%20or%20universities.&packageName=com.studentManagement&dependencies=devtools,web,data-jpa,mysql,lombok,h2)
