@@ -18,6 +18,9 @@ public class StudentServiceImpl implements IStudentService{
 
     @Override
     public Student createStudent(Student student) {
+        if (studentRepository.findStudentByDni(student.getDni())!=null)
+            throw new ModelNotFoundException("El estudiante con DNI: " + student.getDni() + " ya exite");
+
         return studentRepository.save(student);
     }
 
