@@ -1,5 +1,7 @@
 package com.studentManagement.service;
 
+import com.studentManagement.exceptions.ModelNotFoundException;
+import com.studentManagement.exceptions.StudentNotFoundException;
 import com.studentManagement.model.Student;
 import com.studentManagement.repository.IStudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +30,21 @@ public class StudentServiceImpl implements IStudentService{
 
     @Override
     public Student getStudentByDni(String dni) {
-        return studentRepository.findStudentByDni(dni);
+        Student s = studentRepository.findStudentByDni(dni);
+        if(s == null)
+            throw new ModelNotFoundException("El estudiante con DNI: "+ dni +" no existe.");
+
+        return s;
     }
 
 
     @Override
     public void deleteStudentByDni(String dni) {
-        studentRepository.delete(getStudentByDni(dni));
+        Student s = studentRepository.findStudentByDni(dni);
+        if(s == null)
+            throw new StudentNotFoundException(dni);
+
+        studentRepository.delete(s);
     }
 
 
