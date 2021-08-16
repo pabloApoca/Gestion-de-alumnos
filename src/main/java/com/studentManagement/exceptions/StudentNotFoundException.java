@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class StudentNotFoundException extends ApiException{
 
     public StudentNotFoundException(String dni) {
-        super("StudentNotFoundException", "The Student with DNI: " + dni + " doesn't exist", 404);
+        super("StudentNotFoundException", "The Student with DNI: " + dni + " doesn't exist");
     }
 }
