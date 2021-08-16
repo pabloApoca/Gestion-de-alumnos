@@ -2,6 +2,7 @@ package com.studentManagement.service;
 
 import com.studentManagement.exceptions.ModelNotFoundException;
 import com.studentManagement.exceptions.StudentNotFoundException;
+import com.studentManagement.exceptions.StudentsNotFoundException;
 import com.studentManagement.model.Student;
 import com.studentManagement.repository.IStudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +54,10 @@ public class StudentServiceImpl implements IStudentService{
 
     @Override
     public List<Student> getListStudents() {
-        return studentRepository.findAll();
+        List<Student> listStudents = studentRepository.findAll();
+        if(listStudents.isEmpty())
+            throw new StudentsNotFoundException();
+        return listStudents;
     }
 
 
